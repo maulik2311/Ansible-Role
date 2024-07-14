@@ -1,0 +1,9 @@
+---
+ - hosts: "{{host_name}}"
+   gather_facts: false
+   become: yes
+   tasks:
+     - name: Manage "{{tool_name}}" Service
+       apt:
+         name: "{{tool_name}}"
+         state: "{{tool_state}}"

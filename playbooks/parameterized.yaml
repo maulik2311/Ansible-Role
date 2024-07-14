@@ -1,0 +1,16 @@
+---
+ - hosts: testnodes
+   gather_facts: true
+   become: yes
+   tasks:
+     - name: Install nginx on Debian
+       apt:
+         name: nginx
+         state: "{{tool_state}}"
+       when: ansible_os_family == "Debian"
+     - name: Install nginx on Redhat
+       apt:
+         name: nginx
+         state: "{{tool_state}}"
+       when: ansible_os_family == "Redhat"
+

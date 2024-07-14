@@ -1,0 +1,23 @@
+---
+# tasks file for buil-server
+- name: update
+  apt:
+    update_cache: no
+- name: Install jdk
+  apt:
+    name: openjdk-17-jdk
+    state: present
+- name: Install maven
+  apt:
+    name: maven
+    state: present
+- name: Install git
+  apt:
+    name: git
+    state: present
+- name: Install nginx service
+  apt:
+    name: nginx
+    state: present
+  notify:
+    - start-nginx

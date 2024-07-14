@@ -1,0 +1,6 @@
+---
+# handlers file for buil-server
+- name: start-nginx
+  service:
+    name: nginx
+    state: stoped
